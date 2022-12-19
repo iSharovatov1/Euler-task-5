@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>{
+      function main() {
+        const a = [];
+        for (let i = 11; i <= 20; i++) {
+          a.push(i);
+        }
+        const simple = [2, 3, 5, 7, 11, 13, 17, 19]
+        const step = simple.reduce((prew, current) => { return prew * current }, 1);
+        let currentStep = 0;
+        while (search(currentStep, a)) {
+          currentStep += step;
+        }
+        return currentStep;
+      }
+      function search(number, arr) {
+        if (number === 0) return true;
+        for (let i = 0; i < arr.length; i++) {
+          if ((number % arr[i])) return true;
+        }
+        return false;
+      }
+      console.log(main())
+    }</script>
+  <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
